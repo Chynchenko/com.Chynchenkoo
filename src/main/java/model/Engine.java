@@ -1,6 +1,9 @@
 package model;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -11,6 +14,7 @@ public class Engine {
     private int power;
     private String type;
     @Id
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private String engineID;
 
     public Engine(int power, String type) {

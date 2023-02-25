@@ -1,4 +1,5 @@
 package model;
+import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -19,12 +20,17 @@ public class Order {
     private List<Car> carOrder;
     private Date created;
     @Id
+    @SerializedName(value = "_id",alternate = "orderId")
     private String orderId;
 
     @SneakyThrows
     public Order() {
-        orderId = UUID.randomUUID().toString();
-        created = Date.valueOf(LocalDate.now());
+        if (created == null) {
+            created = Date.valueOf(LocalDate.now());
+        }
+        if (orderId == null) {
+            orderId = UUID.randomUUID().toString();
+        }
         carOrder = new ArrayList<>();
     }
 
@@ -45,5 +51,12 @@ public class Order {
             orderId = UUID.randomUUID().toString();
 
         }
+    }
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 }

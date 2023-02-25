@@ -8,6 +8,7 @@ public enum Actions {
     COMPARE("Compare cars", new CompareAction()),
     SHOW_ALL("Show all cars", new ShowAllAction()),
     SINGLETON_AND_AUTOWIRED_ACTION("Singleton and Autowired example", new SingletonAndAutowiredAction()),
+    HIBERNATE_ACTIONS("Hibernate car and order example", new HibernateOperations()),
     EXIT("Finish program", new ExitAction());
 
     private final String name;
@@ -16,9 +17,5 @@ public enum Actions {
     Actions(final String name, final Action action) {
         this.name = name;
         this.action = action;
-    }
-
-    public void execute()  {
-        action.execute();
     }
 }

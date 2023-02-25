@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 
 @Getter
 @Setter
@@ -15,9 +12,7 @@ import javax.persistence.OneToOne;
 @OnDelete(action = OnDeleteAction.CASCADE)
 public class PassengerCar extends Car {
     private int passengerCount;
-
     public PassengerCar() {
-
     }
 
     public PassengerCar(String manufacturer, Engine engine, Color color, String id, int passengerCount) {
@@ -35,6 +30,5 @@ public class PassengerCar extends Car {
 
         return String.format("%s: {manufacturer =%s ; Engine =%s; Color = %s; PassengerCount=%d; ID=%s; Count=%d}",
                 getCarType(), getManufacturer(), getEngine(), getColor(), getPassengerCount(), getId(), getCount());
-
     }
 }

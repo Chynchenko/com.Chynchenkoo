@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
 
 @Getter
@@ -15,7 +14,6 @@ public class Truck extends Car implements CountRestore {
     private int loadCapacity;
 
     public Truck() {
-
     }
 
     public Truck(String manufacturer, Engine engine, Color color, String id, int loadCapacity) {

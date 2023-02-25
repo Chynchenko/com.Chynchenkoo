@@ -2,7 +2,6 @@ package model;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -17,8 +16,8 @@ import java.util.UUID;
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Car implements CountRestore {
     private String manufacturer;
-    @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "engineid")
+    @OneToOne(cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Engine engine;
     @Enumerated(EnumType.STRING)
     private Color color;
@@ -33,7 +32,7 @@ public abstract class Car implements CountRestore {
     @Id
     private  String id;
     @Transient
-    private final Random random = new Random();
+    private final transient Random random = new Random();
 
     public Car(String manufacturer, Engine engine, Color color) {
         this.manufacturer = manufacturer;
