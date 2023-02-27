@@ -4,7 +4,8 @@ import annotation.Autowired;
 import annotation.Singleton;
 import model.*;
 import org.apache.commons.lang3.EnumUtils;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 
 
 import repository.*;
+import util.FlyMigration;
 import util.RandomGenerator;
 
 import static model.CarType.CAR;
@@ -30,9 +32,13 @@ public class CarService {
     public final RandomGenerator randomGenerator = new RandomGenerator();
 
     private final Random random = new Random();
-    @Autowired (repository = CarListRepository.class)
+    private static FlyMigration flymigration;
+    private static final Logger LOGGER = LoggerFactory.getLogger(CarService.class);
+
+    @Autowired(repository = Repository.class)
     public CarService(final Repository<Car> repository) {
         this.carArrayRepository = repository;
+        FlyMigration.migrateDB();
     }
 
     public Map<String, Object> mapFromFile(String path) throws IOException {

@@ -26,6 +26,7 @@ public class OrderService {
             final Car car = carService.createCar(CarType.CAR);
             car.setOrder(order);
             cars.add(car);
+            car.setOrder(order);
         }
 
         order.setCarOrder(cars);

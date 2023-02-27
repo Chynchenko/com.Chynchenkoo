@@ -9,6 +9,7 @@ public enum Actions {
     SHOW_ALL("Show all cars", new ShowAllAction()),
     SINGLETON_AND_AUTOWIRED_ACTION("Singleton and Autowired example", new SingletonAndAutowiredAction()),
     HIBERNATE_ACTIONS("Hibernate car and order example", new HibernateOperations()),
+    MONGO_ACTIONS("MongoDB car and order example", new MongoOperations()),
     EXIT("Finish program", new ExitAction());
 
     private final String name;

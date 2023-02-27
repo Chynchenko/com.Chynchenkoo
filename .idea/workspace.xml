@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5357bd7a-9103-4591-84fb-8b655427b823" name="Changes" comment="HW_24">
-      <change afterPath="$PROJECT_DIR$/src/main/java/action/HibernateOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/CarMongoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/OrderMongoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/CarDeserialization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/CustomGSONDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/CustomGSONSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/MongoUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/OrderGSONDeserializer.java" afterDir="false" />
+    <list default="true" id="5357bd7a-9103-4591-84fb-8b655427b823" name="Changes" comment="HW_26">
+      <change afterPath="$PROJECT_DIR$/src/main/java/action/MongoOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/flywayConfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/FlyMigration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/action/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/action/Actions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/PassengerCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/PassengerCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Truck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/CarHibernateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/CarHibernateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/OrderHibernateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/OrderHibernateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -40,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="HW_24" />
       </map>
     </option>
   </component>
@@ -116,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676987847007</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="HW_26">
+      <created>1677335658530</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677335658530</updated>
+    </task>
+    <task id="LOCAL-00004" summary="HW_26">
+      <created>1677335723378</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677335723378</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +142,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Homework_23" />
     <MESSAGE value="HW_24" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW_24" />
+    <MESSAGE value="HW_26" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW_26" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/action/MongoOperations.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
