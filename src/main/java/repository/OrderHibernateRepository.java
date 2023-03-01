@@ -13,12 +13,11 @@ public class OrderHibernateRepository implements Repository<Order> {
         final EntityManager entityManager = HibernateUtil.getEntityManager();
         entityManager.getTransaction().begin();
         entityManager.persist(order);
-        LOGGER.info("Saving order..." + order.getOrderId());
         entityManager.getTransaction().commit();
+        LOGGER.info("Saving order with id {}", order.getOrderId());
         entityManager.close();
 
     }
-
     @Override
     public Order[] getAll() {
         final EntityManager entityManager = HibernateUtil.getEntityManager();
@@ -26,11 +25,10 @@ public class OrderHibernateRepository implements Repository<Order> {
         return entityManager.createQuery("from Order", Order.class)
                 .getResultList().toArray(new Order[0]);
     }
-
     @Override
     public Optional<Order> getById(String id) {
         final EntityManager entityManager = HibernateUtil.getEntityManager();
-        LOGGER.info("Getting order with id: " + id);
+        LOGGER.info("Getting order with id {}",id);
         return Optional.ofNullable(entityManager.find(Order.class, id));
     }
 
@@ -41,9 +39,8 @@ public class OrderHibernateRepository implements Repository<Order> {
         entityManager.createQuery("delete from Order where id = :orderId")
                 .setParameter("orderId", id)
                 .executeUpdate();
-        LOGGER.info("Deleting order with id: " + id);
+        LOGGER.info("Deleting order with id {}",id);
         entityManager.getTransaction().commit();
 
     }
-
 }
